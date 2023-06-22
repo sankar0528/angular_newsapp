@@ -1,0 +1,29 @@
+<table class="table">
+    <thead>
+        <tr><th>News Title</th></tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let newsItem of newsList">
+            <td (click)="showNewsDetails(newsItem)">{{ newsItem.title }}</td>
+            <td (click)="markAsFavorite(newsItem.title)">
+                <i class="fa-regular fa-heart"></i>
+            </td>
+          </tr>
+    </tbody>
+  </table>
+
+  <div class="button"><button class="btn btn-success" (click)="getFavorites()">Get Favorites</button></div>
+
+  <table class="table">
+    <thead>
+        <tr><th>Favorite News Title</th></tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let favorite of favorites">
+            <td>{{ favorite.title }}</td>
+          </tr>
+    </tbody>
+  </table>
+
+  
+  

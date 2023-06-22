@@ -1,0 +1,11 @@
+td{
+    cursor: pointer;
+}
+th{
+    font-size: 20px;
+}
+.button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
