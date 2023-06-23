@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonService } from '../common.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-news-list',
@@ -9,7 +10,7 @@ import { CommonService } from '../common.service';
 export class NewsListComponent implements OnInit {
   newsList: any[]=[];
   favorites:any []=[];
-  constructor(private newsService: CommonService) { }
+  constructor(private newsService: CommonService,private router:Router) { }
 
   ngOnInit() {
     this.fetchNews();
@@ -34,7 +35,6 @@ export class NewsListComponent implements OnInit {
   }
 
   showNewsDetails(newsItem: any) {
-    const newsDetails = `Title: ${newsItem.title}\n\nDescription: ${newsItem.description}`;
-    alert(newsDetails);
+    this.router.navigate(['/news/details'],{state:{newsData:newsItem}})
   }
 }
