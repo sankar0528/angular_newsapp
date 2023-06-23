@@ -34,6 +34,7 @@ export class NewsListComponent implements OnInit {
   }
 
   showNewsDetails(newsItem: any) {
-    console.log('News details:', newsItem);
+    const newsDetails = `Title: ${newsItem.title}\n\nDescription: ${newsItem.description}`;
+    alert(newsDetails);
   }
 }
